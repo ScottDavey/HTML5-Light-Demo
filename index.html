@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		* { padding: 0px; margin: 0px auto; }
+		html, body { background-color: #111111; font:normal 9pt "Century Gothic", Verdana, Arial; color: #FFFFFF; }
+
+		#wrapper { width: 750px; height: 400px; margin-top:50px; }
+		#wrapper #heading { width:100%; height:90px; font-size:56pt; color:#05B575; }
+
+		#wrapper { width: 750px; height: 400px; margin-top:50px; }
+		#wrapper #heading { width:100%; height:90px; font-size:56pt; color:#05B575; }
+
+		#wrapper #difficulty { width:100%; height: 52px; }
+		#wrapper #difficulty .difficultyBtn {
+			width:185.5px;
+			height:35px;
+			padding-top:17px;
+			background-color:#05475D;
+			font-size:12pt;
+			color:#111111;
+			border:1px solid #075c77;
+			border-right:1px solid #042e3b;
+			border-bottom:1px solid #042e3b;
+			float:left;
+			text-align:center;
+			cursor:pointer;
+		}
+		#wrapper #difficulty .difficultyBtn:hover { color:#12b1e1; }
+		#wrapper #difficulty .difficultyBtn.active { color:#12b1e1; }
+
+		#wrapper #instructions { width: 100%; margin-top: 10px; }
+		#wrapper #instructions .row { width: 100%; margin-bottom: 5px; padding-bottom:5px; border-bottom:1px dotted #000000; }
+		#wrapper #instructions .left { width: 40%; font-weight:bold; float: left; }
+		#wrapper #instructions .right { width: 60%; float: left; }
+		#wrapper #instructions li { margin-left:40px; }
+
+		/** CLEARFIX for floated elements */
+		.cf:before, .cf:after { content:""; display:table; } /* For modern browsers */
+		.cf:after { clear:both; } /* For modern browsers */
+		.cf { *zoom:1; } /* For IE 6/7 (triggers hasLayout) */
+	</style>
+
+	<script type="text/javascript" language="javascript" src="script/temp.js"></script>
+</head>
+<body onload="game.init();">
+
+	<div id="wrapper">
+		<canvas id="viewport" width="750" height="405"></canvas>
+		<div class="cf">
+			<div class="left" id="controls"><img id="control_img" src="images/Keyboard_Controls.png" /></div>
+			<!--<div class="cf" id="difficulty">
+				<div class="difficultyBtn" id="BEGINNER" val="0">BEGINNER</div>
+				<div class="difficultyBtn" id="EASY" val="3">EASY</div>
+				<div class="difficultyBtn" id="INTERMEDIATE" val="2">INTERMEDIATE</div>
+				<div class="difficultyBtn active" id="ADVANCED" val="1">ADVANCED</div>
+			</div>-->
+			<div class="right" id="instructions">
+				<div class="row cf">
+					<div class="left">OBJECT:</div>
+					<div class="right">You are the white square. The object of the game is to find the exit (green tile).</div>
+				</div>
+				<div class="row cf">
+					<div class="left">POINTS:</div>
+					<div class="right">
+						If you find the exit in:<br />
+						<ul>
+							<li>Less than or equal to 10 seconds: 200 points</li>
+							<li>Between 11 and 20 seconds: 100 points</li>
+							<li>More than 20 seconds: 50 points</li>
+						</ul>
+					</div>
+				</div>
+				<!--<div class="row cf">
+					<div class="left">TIPS:</div>
+					<div class="right">
+						If it's too hard for you, set it to a lower difficulty: BEGINNER, EASY, INTERMEDIATE, or ADVANCED
+					</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
